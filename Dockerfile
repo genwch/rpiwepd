@@ -14,9 +14,6 @@ ADD ./static $WORKDIR/static
 RUN /bin/echo -e "#!/bin/ash\npython $WORKDIR/$PY_APP/app.py" > /exec
 RUN chmod a+x /exec
 
-#USER 1000
-
-#CMD ["/bin/ash"]
 CMD ["/exec"]
 
 
