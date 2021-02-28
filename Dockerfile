@@ -14,7 +14,7 @@ ADD ./$PY_APP $WORKDIR/$PY_APP
 RUN /bin/echo -e "#!/bin/ash\npython $WORKDIR/$PY_APP/app.py" > /exec
 RUN chmod a+x /exec
 
-USER 1001
+USER 1000
 
 CMD ["/exec"]
 
