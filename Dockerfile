@@ -2,7 +2,7 @@ FROM docker.io/library/python:3.7.10-alpine3.12
 
 ENV WORKDIR /usr/src/app
 ENV PY_APP rpiwepd
-ENV TZ Asia/Hongkong
+ENV TZ Asia/Hong_Kong
 
 WORKDIR $WORKDIR
 
