@@ -8,7 +8,7 @@ WORKDIR $WORKDIR
 
 COPY ./requirements.txt $WORKDIR
 RUN apk update && \
-    apk add --no-cache --virtual tzdata build-deps libjpeg gcc g++ python3-dev linux-headers musl-dev jpeg-dev zlib-dev freetype-dev && \
+    apk add --no-cache --virtual tzdata build-deps libjpeg gcc g++ python3-dev linux-headers musl-dev jpeg-dev zlib-dev freetype-dev tzdata && \
     cp /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
     pip install -r requirements.txt
 ADD ./$PY_APP $WORKDIR/$PY_APP
