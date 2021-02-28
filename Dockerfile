@@ -11,10 +11,10 @@ RUN apk update && \
     pip install -r requirements.txt && \
     apk del build-deps
 ADD ./$PY_APP $WORKDIR/$PY_APP
-RUN /bin/echo -e "#!/bin/bash\npython $WORKDIR/$PY_APP/app.py" > /exec
+RUN /bin/echo -e "#!/bin/ash\npython $WORKDIR/$PY_APP/app.py" > /exec
 RUN chmod a+x /exec
 
-USER 1000
+USER 1001
 
 CMD ["/exec"]
 
